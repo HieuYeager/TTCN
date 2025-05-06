@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Đăng ký";
+}
+<h2>Đăng ký</h2>
+
+@using (Html.BeginForm())
+{
+    <label>Tên đăng nhập</label>
+    <br />
+    <input type="text" name="username" required />
+    <br />
+    <label>Mật khẩu</label>
+    <br />
+    <input type="password" name="password" required />
+    <br />
+    <label>Xác nhận mật khẩu</label>
+    <br />
+    <input type="password" name="confirmPassword" required />
+    <br />
+    <br />
+    <input type="submit" value="Đăng ký" />
+}
+
+<p style="color:red">@ViewBag.Error</p>
+<p>Đã có tài khoản? <a href="@Url.Action("Login", "Auth")">Đăng nhập</a></p>
