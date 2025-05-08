@@ -4,14 +4,34 @@ using Hotel_Mng.DAL;
 
 namespace Hotel_Mng.Controllers
 {
-    public class AccountController : Controller
+    public class HomeController : Controller
     {
         private HotelDbContext db = new HotelDbContext();
 
         public ActionResult Index()
         {
-            var accounts = db.Accounts.ToList(); // Lấy danh sách account
-            return View(accounts); // Truyền xuống View
+            return View();
         }
+
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page."; 
+
+            return View();
+        }
+
+
+        //public ActionResult Index()
+        //{
+        //    var accounts = db.Accounts.ToList(); // Lấy danh sách account
+        //    return View(accounts); // Truyền xuống View
+        //}
     }
 }

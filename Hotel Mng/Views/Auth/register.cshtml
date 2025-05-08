@@ -1,25 +1,34 @@
 ﻿@{
     ViewBag.Title = "Đăng ký";
 }
-<h2>Đăng ký</h2>
 
-@using (Html.BeginForm())
-{
-    <label>Tên đăng nhập</label>
-    <br />
-    <input type="text" name="username" required />
-    <br />
-    <label>Mật khẩu</label>
-    <br />
-    <input type="password" name="password" required />
-    <br />
-    <label>Xác nhận mật khẩu</label>
-    <br />
-    <input type="password" name="confirmPassword" required />
-    <br />
-    <br />
-    <input type="submit" value="Đăng ký" />
-}
+<div class="d-flex flex-column align-items-center gap-3 border border-opacity-50 rounded-3 border-dark border-2 px-5 py-3 mx-auto" style="height:fit-content; width:fit-content">
+    <h2>Đăng ký</h2>
 
-<p style="color:red">@ViewBag.Error</p>
-<p>Đã có tài khoản? <a href="@Url.Action("Login", "Auth")">Đăng nhập</a></p>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "d-flex flex-column align-items-center" }))
+    {
+        <div style="width:fit-content">
+            <label>Tên đăng nhập</label>
+            <br />
+            <input type="text" name="username" class="border rounded-2 border-dark p-1" required />
+            <br />
+        </div>
+        <div style="width: fit-content">
+            <label>Mật khẩu</label>
+            <br />
+            <input type="password" name="password" class="border rounded-2 border-dark p-1" required />
+            <br />
+        </div>
+        <div style="width: fit-content">
+            <label>Xác nhận mật khẩu</label>
+            <br />
+            <input type="password" name="password" class="border rounded-2 border-dark p-1" required />
+            <br />
+        </div>
+        <br />
+        <input type="submit" class="border rounded-5 border-dark bg-primary px-2 py-1" value="Đăng ký" />
+    }
+
+    <p style="color:red">@ViewBag.Error</p>
+    <p>Đã có tài khoản? <a href="@Url.Action("Login", "Auth")">Đăng nhập</a></p>
+</div>

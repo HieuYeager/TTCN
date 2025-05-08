@@ -1,21 +1,31 @@
 ﻿@{
     ViewBag.Title = "Đăng nhập";
 }
-<h2>Đăng nhập</h2>
+<div class = "d-flex flex-column align-items-center gap-3 border border-opacity-50 rounded-3 border-dark border-2 px-5 py-3 mx-auto" style="height:fit-content; width:fit-content">
+    <h2 class="text-center">Đăng nhập</h2>
 
-@using (Html.BeginForm())
-{
-    <label>Tên đăng nhập</label>
-    <br />
-    <input type="text" name="username" required />
-    <br />
-    <label>Mật khẩu</label>
-    <br />
-    <input type="password" name="password" required />
-    <br />
-    <br />
-    <input type="submit" value="Đăng nhập" />
-}
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "d-flex flex-column align-items-center" }))
+    {
+        <div style="width:fit-content">
+            <label>Tên đăng nhập</label>
+            <br />
+            <input type="text" name="username" class="border rounded-2 border-dark p-1" required />
+            <br />
+        </div>
+        <div style="width: fit-content">
+            <label>Mật khẩu</label>
+            <br />
+            <input type="password" name="password" class="border rounded-2 border-dark p-1" required />
+            <br />
+        </div>
+        <div class="w-100">
+            <a href="@Url.Action("Register", "Auth")" class="text-danger">Quên mật khẩu?</a>
+        </div>
+        <br />
+        <input type="submit" class="border rounded-4 border-dark bg-primary px-2 py-1" value="Đăng nhập" />
+    }
 
-<p style="color:red">@ViewBag.Error</p>
-<p>Chưa có tài khoản? <a href="@Url.Action("Register", "Auth")">Đăng ký</a></p>
+    <p style="color:red" class="text-lg-center">@ViewBag.Error</p>
+    <p class="text-lg-center">Chưa có tài khoản? <a href="@Url.Action("Register", "Auth")">Đăng ký</a></p>
+</div>
+

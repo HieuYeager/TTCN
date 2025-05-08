@@ -1,13 +1,13 @@
-﻿using Hotel_Mng.DAL;
+﻿using System;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.Mvc;
-using YourProjectName.DAL;
-using YourProjectName.Models;
+using Hotel_Mng .DAL;
+using Hotel_Mng.Models;
 
-namespace YourProjectName.Controllers
-{
+namespace Hotel_Mng.Controllers
+{   
     public class AuthController : Controller
     {
         private HotelDbContext db = new HotelDbContext();
